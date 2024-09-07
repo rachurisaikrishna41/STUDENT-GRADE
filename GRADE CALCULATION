@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class StudentGradeCalculator {
+
+    public static void main(String[] args) {
+        // Create a Scanner object for input
+        Scanner scanner = new Scanner(System.in);
+
+        // Get student name
+        System.out.print("Enter student name: ");
+        String studentName = scanner.nextLine();
+
+        // Number of subjects
+        final int NUMBER_OF_SUBJECTS = 5;
+        double[] scores = new double[NUMBER_OF_SUBJECTS];
+
+        // Get scores for each subject
+        for (int i = 0; i < NUMBER_OF_SUBJECTS; i++) {
+            System.out.print("Enter score for subject " + (i + 1) + ": ");
+            scores[i] = scanner.nextDouble();
+        }
+
+        // Calculate average score
+        double averageScore = calculateAverage(scores);
+
+        // Determine the grade
+        char grade = determineGrade(averageScore);
+
+        // Display the result
+        Sys
